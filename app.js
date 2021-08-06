@@ -12,7 +12,8 @@ mongoose.connect(
         useFindAndModify: false,
         useUnifiedTopology: true
     },
-).catch(error => console.log(error));
+).then(() => console.log('Connected to mongodb'))
+.catch(error => console.error(error));
 
 const app = express();
 app.set("view engine", "ejs");
