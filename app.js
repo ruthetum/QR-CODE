@@ -12,10 +12,7 @@ mongoose.connect(
         useFindAndModify: false,
         useUnifiedTopology: true
     },
-    () => {
-        console.log("Connected to DB");
-    }
-);
+).catch(error => console.log(error));
 
 const app = express();
 app.set("view engine", "ejs");
